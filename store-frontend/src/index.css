@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark body {
+  background: #020617;
+  color: #ffffff;
+}
+
+/* =========================
+   TYPOGRAPHY FIX
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+input,
+textarea,
+select,
+label,
+td,
+th {
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0e7490;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #155e75;
+}
+
+/* =========================
+   AUTOFILL FIX
+========================= */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+
+  -webkit-text-fill-color: #0f172a !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* =========================
+   DARK MODE AUTOFILL
+========================= */
+
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill,
+.dark select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1e293b inset !important;
+  box-shadow: 0 0 0 1000px #1e293b inset !important;
+
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: #0e7490;
+  color: white;
+}
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* =========================
+   TRANSITIONS
+========================= */
+
+button,
+input,
+textarea,
+select,
+a,
+div {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+@layer components {
+  .input-class {
+    @apply w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-cyan-600 focus:ring-2 focus:ring-cyan-600/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white;
+  }
+  .btn-primary {
+    @apply rounded-2xl bg-cyan-700 px-5 py-3 font-black text-white transition hover:bg-cyan-800 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-secondary {
+    @apply rounded-2xl bg-slate-100 px-5 py-3 font-black text-slate-700 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700;
+  }
+}
+
+@layer components {
+  .action-edit {
+    @apply flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-700 transition hover:bg-blue-600 hover:text-white;
+  }
+  .action-delete {
+    @apply flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-700 transition hover:bg-rose-600 hover:text-white;
+  }
+}
+
+@layer components {
+  .action-neutral {
+    @apply flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition hover:bg-slate-700 hover:text-white dark:bg-slate-800 dark:text-slate-200;
+  }
+}

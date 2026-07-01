@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+store-backend/node_modules/
+store-frontend/node_modules/
+
+# Private environment files
+.env
+.env.*
+!.env.example
+store-backend/.env
+store-frontend/.env
+
+# Build and test output
+store-frontend/dist/
+store-backend/dist/
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Uploaded runtime files
+store-backend/uploads/*
+!store-backend/uploads/.gitkeep
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
