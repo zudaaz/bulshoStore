@@ -54,7 +54,7 @@ const allowedOrigins = new Set(
     process.env.CORS_ORIGINS,
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    ""https://bulsho-store.vercel.app""
+    "https://bulsho-store.vercel.app"
   ]
     .filter(Boolean)
     .flatMap((origin) =>
